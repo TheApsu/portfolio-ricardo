@@ -21,14 +21,23 @@ npm run lint
 
 ## Deploy (free)
 
-The Vite `base` is `./`, so the same build works at a domain root or a sub-path.
+**Live:** https://theapsu.github.io/portfolio-ricardo/
+
+Every push to `main` runs `.github/workflows/deploy.yml` (lint, build, publish `dist/` to GitHub Pages), so updating the site is just:
+
+```bash
+git add -A && git commit -m "Update portfolio" && git push
+```
+
+Progress shows under the repo's **Actions** tab; the site updates about a minute later.
+
+The Vite `base` is `./`, so the same build also works on other hosts, at a domain root or a sub-path:
 
 | Host | Build command | Output directory |
 |---|---|---|
 | Cloudflare Pages | `npm run build` | `dist` |
 | Netlify | `npm run build` | `dist` |
 | Vercel | `npm run build` | `dist` (framework preset: Vite) |
-| GitHub Pages | `npm run build`, then publish `dist/` (e.g. with `actions/deploy-pages`) | `dist` |
 
 ## Project skills
 
