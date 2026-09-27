@@ -1,0 +1,141 @@
+@import '@fontsource-variable/geist';
+@import '@fontsource-variable/geist-mono';
+@import 'tailwindcss';
+
+/* Tokens from DESIGN.md. Components use the Tailwind names below, never raw hex. */
+:root {
+  --canvas: #f6f6f7;
+  --surface: #fdfdfd;
+  --surface-sunk: #ededef;
+  --ink: #111113;
+  --ink-muted: #52525b;
+  --ink-subtle: #67676f;
+  --hairline: #e4e4e7;
+  --hairline-strong: #d4d4d8;
+  --accent: #c2410c;
+  --accent-hover: #9a3412;
+  --accent-ink: #fff7f2;
+  --accent-soft: #fdeee6;
+
+  --nav-height: 64px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --canvas: #0c0c0e;
+    --surface: #151518;
+    --surface-sunk: #1c1c20;
+    --ink: #f4f4f5;
+    --ink-muted: #a1a1aa;
+    --ink-subtle: #8b8b94;
+    --hairline: #26262b;
+    --hairline-strong: #36363d;
+    --accent: #fb923c;
+    --accent-hover: #fdba74;
+    --accent-ink: #0c0c0e;
+    --accent-soft: #2a1a10;
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-sunk: var(--surface-sunk);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-subtle: var(--ink-subtle);
+  --color-hairline: var(--hairline);
+  --color-hairline-strong: var(--hairline-strong);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-soft: var(--accent-soft);
+
+  --font-sans: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Geist Mono Variable', ui-monospace, SFMono-Regular, monospace;
+
+  --radius-panel: 20px;
+  --radius-media: 14px;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@utility wrap {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-left: max(1.25rem, env(safe-area-inset-left));
+  padding-right: max(1.25rem, env(safe-area-inset-right));
+
+  @media (width >= 48rem) {
+    padding-left: max(2rem, env(safe-area-inset-left));
+    padding-right: max(2rem, env(safe-area-inset-right));
+  }
+}
+
+@utility text-display {
+  font-size: clamp(2.75rem, 1.4rem + 5.6vw, 5.75rem);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+@utility text-headline {
+  font-size: clamp(2rem, 1.35rem + 2.6vw, 3.25rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+@utility text-lead {
+  font-size: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+@utility text-figure {
+  font-size: clamp(3rem, 2rem + 3.5vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  font-variant-numeric: tabular-nums;
+}
+
+@layer base {
+  html {
+    /* Keeps anchor jumps and keyboard focus clear of the sticky nav. */
+    scroll-padding-top: calc(var(--nav-height) + 16px);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    @apply bg-canvas font-sans text-ink antialiased;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  a,
+  button {
+    touch-action: manipulation;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+}
