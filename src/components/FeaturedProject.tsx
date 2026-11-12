@@ -3,6 +3,7 @@ import { resty } from '../data/cv'
 import restyCard from '../assets/resty/resty-card.webp'
 import restyLogo from '../assets/resty/resty-logo.svg'
 import restyMap from '../assets/resty/resty-map.webp'
+import { LinkoraProject } from './LinkoraProject'
 import { ButtonLink } from './ui/ButtonLink'
 import { Reveal } from './ui/Reveal'
 
@@ -11,7 +12,7 @@ export function FeaturedProject() {
     <section id="resty" aria-labelledby="resty-heading" className="wrap py-20 lg:py-24">
       <Reveal>
         <h2 id="resty-heading" className="text-headline">
-          Featured Project
+          Featured Projects
         </h2>
       </Reveal>
 
@@ -129,6 +130,8 @@ export function FeaturedProject() {
           </div>
         </article>
       </Reveal>
+
+      <LinkoraProject />
     </section>
   )
 }

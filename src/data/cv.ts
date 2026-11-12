@@ -40,6 +40,24 @@ export const resty = {
   },
 } as const
 
+export const linkora = {
+  name: 'Linkora',
+  tagline: 'Retail SaaS Platform',
+  role: 'CEO',
+  period: 'Jun 2026 - Present',
+  description:
+    'A multi-tenant SaaS that gives retail stores a branded online storefront on their own subdomain, an admin panel, and electronic shelf labels, all synced from one product catalog.',
+  bullets: [
+    'Lead Linkora as CEO and co-develop the platform with Next.js, React, TypeScript, and Tailwind CSS.',
+    'Built the electronic shelf label module, role-based access control, multi-currency pricing with automatic daily exchange rates, and a self-checkout flow.',
+    'Added product analytics with PostHog (store traffic and error tracking) and handle deployments on a VPS with Docker, nginx, and Cloudflare.',
+  ],
+  stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'PostHog', 'Docker', 'nginx', 'Cloudflare'],
+  links: {
+    website: 'https://linkorasoftware.com/',
+  },
+} as const
+
 export type Job = {
   title: string
   company: string
@@ -139,7 +157,7 @@ export const skills: SkillGroup[] = [
   {
     id: 'frontend',
     label: 'Frontend',
-    items: ['React.js', 'Next.js', 'Vue.js', 'Angular', 'Tailwind CSS', 'WordPress'],
+    items: ['React.js', 'Next.js', 'Vue.js', 'Angular', 'Tailwind CSS', 'TanStack Query', 'Zustand', 'WordPress'],
   },
   {
     id: 'mobile',
@@ -159,12 +177,12 @@ export const skills: SkillGroup[] = [
   {
     id: 'cloud',
     label: 'Cloud & DevOps',
-    items: ['AWS', 'Google Cloud', 'Docker', 'Linux', 'Cloudflare'],
+    items: ['AWS', 'Google Cloud', 'Docker', 'nginx', 'Linux', 'Cloudflare'],
   },
   {
     id: 'tools',
     label: 'Tools & Methods',
-    items: ['Git/GitHub', 'Jira', 'Trello', 'Figma', 'Agile/Scrum', 'Claude Code (AI-assisted development)'],
+    items: ['Git/GitHub', 'Playwright', 'PostHog', 'Jira', 'Trello', 'Figma', 'Agile/Scrum', 'Claude Code (AI-assisted development)'],
   },
 ]
 

@@ -3,7 +3,7 @@ import { profile } from '../data/cv'
 import { ButtonLink } from './ui/ButtonLink'
 
 const links = [
-  { href: '#resty', label: 'Resty' },
+  { href: '#resty', label: 'Projects' },
   { href: '#experience', label: 'Experience' },
   { href: '#skills', label: 'Skills' },
   { href: '#certifications', label: 'Certifications' },
